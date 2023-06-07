@@ -13,7 +13,7 @@
    1. https://learn.microsoft.com/ja-jp/cli/azure/
 3. VS Code拡張機能の'Azure CLI Tools', 'Azure Tools'をインストールする
 4. 以下を参考に資源をデプロイする
-   1. https://qiita.com/Futo_Horio/items/dd36e0ed7d674f3f226f
+   1. https://rpa.bigtreetc.com/column/azure_functions_introduction/
 
 # データサンプル
 ```
