@@ -4,7 +4,7 @@ module.exports = async function (context, req) {
   try{
     context.log.info("Process Started");
 
-    // Get billing data from the request body
+    // リクエストボディから請求情報を取得
     const billingData = req.body;
     
     //昨日の日付を取得
@@ -12,13 +12,13 @@ module.exports = async function (context, req) {
     dt.setDate(dt.getDate() - 1);
     const yesterday = dt.toFormat("YYYYMMDD");
 
-    // Format billing data
+    // 請求情報を成形
     const formattedbillingData = formatBillingData(billingData, yesterday);
     
-    // Create Message
+    // Teams投稿用メッセージを作成
     const message = createMessage(formattedbillingData, yesterday) 
 
-    // Return formatted billing data
+    // レスポンスを返却
     context.log.info("Process Finished");
     return context.res = {
         body: message
@@ -70,7 +70,6 @@ function formatBillingData(billingData, strDate) {
       let cost = value[1]
       if(cost > 0){
         const costFloored = Math.floor(cost * Math.pow(10, 2)) / Math.pow(10, 2)
-        // const costFloored = costTemp/100
         result.push([value[0],costFloored])
       }else{
         result.push([value[0],cost])
@@ -96,7 +95,7 @@ function formatBillingData(billingData, strDate) {
     const totalCostFloored = totalCost > 0 ? Math.floor(totalCost * Math.pow(10, 2)) / Math.pow(10, 2) : 0;
 
     // Teamsメッセージ作成
-    let message = "Azure学習用サブスクリプション請求情報 (" + strDate + " 0:00 - 23:59)" + "\n\n";
+    let message = "AzureXXX用サブスクリプション請求情報 (" + strDate + " 0:00 - 23:59)" + "\n\n";
     message += "```" + "\n" + bilingDataStr +"\n";
     message += "----------------------------------------------" + "\n"
     message += "合計" + "￥" + totalCostFloored + "\n\n" + "```" + "\n\n";
