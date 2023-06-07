@@ -1,5 +1,21 @@
-# az_daily_cost_notification_learning
+# 前提
+- Node.js: v.18
+- 以下作業が完了していること（詳細は「」を参照）
+  - Azure Functionsを作成する
+  - Logic Appsを作成する
+  - Azure FunctionsでLogic AppsのマネージドIDのオブジェクトIDに対するアクセス許可を設定する
+  - Logic Appsのランタイム発信IPをAzure Functionsの許可ルールに設定する
 
+# 手順
+1. 以下パスの資源を解凍し自分の環境の任意のディレクトリに配置する
+   1. Dropbox (bigtreetc)\Cloud CoE\02 Azure\00 サブスクリプション管理\02 学習用サブスクリプション\コスト情報のTeams連携\az_daily_cost_notification_learning.zip
+2. Azure CLIをインストールする
+   1. https://learn.microsoft.com/ja-jp/cli/azure/
+3. VS Code拡張機能の'Azure CLI Tools', 'Azure Tools'をインストールする
+4. 以下を参考に資源をデプロイする
+   1. https://qiita.com/Futo_Horio/items/dd36e0ed7d674f3f226f
+
+# データサンプル
 ```
 # formatBillingData 処理結果サンプル
 {
