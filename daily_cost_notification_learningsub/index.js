@@ -99,7 +99,7 @@ function formatBillingData(billingData, strDate) {
     message += "```" + "\n" + bilingDataStr +"\n";
     message += "----------------------------------------------" + "\n"
     message += "合計" + "￥" + totalCostFloored + "\n\n" + "```" + "\n\n";
-    message += "※ 金額は、ディスカウント適用前で、少数第3位以下を切捨てています。";
+    message += "※ 金額は、ディスカウント適用前で、小数第3位以下を切捨てています。";
 
     return message;
   }
